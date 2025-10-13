@@ -1,0 +1,55 @@
+[
+  {
+    "timestamp": "2025-10-05T21:29:30.223Z",
+    "userId": "ae05360f-5ab4-4964-998d-721ab6bb1b7c",
+    "timeframe": "5M",
+    "subscriptionTier": "starter_trader",
+    "request": {
+      "symbol": "XAUUSD",
+      "timeframe": "5M",
+      "userTier": "starter_trader"
+    },
+    "response": {
+      "action": "BUY",
+      "entry": 3862.74,
+      "stop_loss": 3820,
+      "take_profit": 3926.85,
+      "confidence": 78,
+      "take_profits": [
+        {
+          "level": 1,
+          "price": 3926.85,
+          "risk_reward_ratio": 1.5
+        }
+      ],
+      "ai_analysis": {
+        "brief": "Short-term bullish momentum on the 5-minute chart with price trading near the upper Bollinger Band and above short-term EMAs.",
+        "detailed": "Price is trading above the 20 and 50 EMAs on the 5-minute timeframe with a rising MACD histogram and RSI in the upper-neutral zone, indicating continued upside momentum on pullbacks. Immediate structure shows support around 3820–3850 and resistance into the 3920–3935 area, so a buy-on-pullback with a tight stop beneath the support gives a favorable risk-reward.",
+        "market_sentiment": "BULLISH",
+        "trend_direction": "UPWARD",
+        "key_indicators": [
+          "RSI (5M)",
+          "MACD (5M)",
+          "20 EMA",
+          "50 EMA",
+          "200 EMA",
+          "Bollinger Bands (20,2)",
+          "Volume"
+        ]
+      },
+      "future_positions": [],
+      "historical_positions": [
+        {
+          "symbol": "XAUUSD",
+          "entry_price": 3840,
+          "current_status": "ACTIVE",
+          "days_active": 2,
+          "unrealized_pnl": 22.74
+        }
+      ],
+      "has_notifications": true
+    },
+    "executionTime": 41305,
+    "success": true
+  }
+]

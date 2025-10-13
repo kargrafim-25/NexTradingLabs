@@ -1,0 +1,116 @@
+[
+  {
+    "timestamp": "2025-10-03T19:26:44.919Z",
+    "userId": "7131ae29-7fd6-4288-8342-0945d5444dfc",
+    "timeframe": "5M",
+    "subscriptionTier": "admin",
+    "request": {
+      "symbol": "XAUUSD",
+      "timeframe": "5M",
+      "userTier": "admin"
+    },
+    "response": {
+      "action": "BUY",
+      "entry": 3865,
+      "stop_loss": 3838,
+      "take_profit": 3906,
+      "confidence": 75,
+      "take_profits": [
+        {
+          "level": 1,
+          "price": 3906,
+          "risk_reward_ratio": 1.5
+        }
+      ],
+      "ai_analysis": {
+        "brief": "Short-term 5-minute view: price at fresh intraday highs with bullish momentum. RSI on the 5M is overbought but still trending higher, MACD is positive with bullish histogram, short-term EMAs are stacked bullish (EMA20 above EMA50 above EMA200), Bollinger Bands are widening and price is riding the upper band. Volume on up bars is above average relative to the last 24–48 5-minute bars, indicating participation in the move. Technical structure supports a continuation buy with a tight stop under the recent 5M swing low and an initial TP at the next near resistance.",
+        "detailed": "Current intraday structure (5-minute): price is making higher highs and higher lows with a sharp acceleration to the upside in the last 1–3 hours. Key intraday resistance sits around 3875 (minor) and 3900–3910 (near-term target cluster). Key intraday support levels are 3850 (first support, recent consolidation low), 3830 (5M swing low and short-term EMA confluence), and 3810 (deeper structure support). Momentum indicators: 5M RSI reading is extended above 70 indicating overbought short-term conditions but still trending up, which favors continuation while momentum holds. MACD (5M) is positive with signal line separation and a modest expanding histogram, suggesting bullish momentum has room before a clean reversal signal appears. Moving averages: 20-period EMA on 5M is above the 50 and 200 EMAs, all three are sloping up — a bullish alignment for short-term trend-following trades. Bollinger Bands (20,2) are opening up; price is near the upper band which signals strong directional volatility and continuation bias rather than an immediate reversal in the absence of a bearish divergence or volume spike. Volume: recent upticks on bullish candles exceed the average 5M volume over the past trading session, supporting the move; no clear volumetric exhaustion candle has appeared yet. Volatility / risk: 5M ATR suggests typical 5–20 point swings; given current momentum I set a conservative SL beneath the recent 5M swing low to avoid being taken out by normal intraday noise. Trade plan: enter at market (current price), stop loss under short-term structure (stop placed below 5M swing low and 50 EMA), primary take profit at a conservative first resistance zone providing ~1.5 RR. If price extends, scale partial profits and trail stop to break-even then to higher EMAs. Monitor for bearish MACD crossover, RSI failure below 70 into 60s, or a large bearish volume spike which would invalidate the bullish continuation thesis.",
+        "market_sentiment": "BULLISH",
+        "trend_direction": "UPWARD",
+        "key_indicators": [
+          "RSI (5M)",
+          "MACD (5M)",
+          "EMA20/50/200 (5M)",
+          "Bollinger Bands (20,2)",
+          "Volume (5M)",
+          "ATR (14,5M)"
+        ]
+      },
+      "future_positions": [],
+      "historical_positions": [
+        {
+          "symbol": "XAUUSD",
+          "entry_price": 3850,
+          "current_status": "ACTIVE",
+          "days_active": 2,
+          "unrealized_pnl": 15
+        }
+      ],
+      "has_notifications": true
+    },
+    "executionTime": 42697,
+    "success": true
+  },
+  {
+    "timestamp": "2025-10-03T19:43:16.910Z",
+    "userId": "7131ae29-7fd6-4288-8342-0945d5444dfc",
+    "timeframe": "5M",
+    "subscriptionTier": "admin",
+    "request": {
+      "symbol": "XAUUSD",
+      "timeframe": "5M",
+      "userTier": "admin"
+    },
+    "response": {
+      "action": "BUY",
+      "entry": 3864,
+      "stop_loss": 3844,
+      "take_profit": 3894,
+      "confidence": 78,
+      "take_profits": [
+        {
+          "level": 1,
+          "price": 3894,
+          "risk_reward_ratio": 1.5
+        },
+        {
+          "level": 2,
+          "price": 3904,
+          "risk_reward_ratio": 2
+        },
+        {
+          "level": 3,
+          "price": 3924,
+          "risk_reward_ratio": 3
+        }
+      ],
+      "ai_analysis": {
+        "brief": "Short-term 5-minute view shows bullish momentum with price above the short EMAs, RSI in neutral-to-slightly-overbought territory, MACD histogram positive and Bollinger Bands expanding, supporting a buy bias at market price. ([investing.com](https://www.investing.com/currencies/xau-usd?utm_source=openai))",
+        "detailed": "Price is trading around 3864 and has recently broken above the 50 EMA on the 5-minute chart while remaining above the middle Bollinger Band, indicating short-term bullish structure. RSI(14) on 5M is near neutral-to-slightly-overbought, MACD shows a positive histogram and a recent bullish crossover, and volume on upticks is higher than on pullbacks which confirms buying interest. Support near 3850–3840 (recent 5M swing lows / short EMA cluster) provides the logical stop area while immediate resistance and first profit objective sits around recent session highs near 3890–3895. ([investing.com](https://www.investing.com/currencies/xau-usd?utm_source=openai))",
+        "market_sentiment": "BULLISH",
+        "trend_direction": "UPWARD",
+        "key_indicators": [
+          "RSI(5m)",
+          "MACD(5m)",
+          "EMA 50",
+          "EMA 200",
+          "Bollinger Bands (20,2)",
+          "Volume (tick)"
+        ]
+      },
+      "future_positions": [],
+      "historical_positions": [
+        {
+          "symbol": "XAUUSD",
+          "entry_price": 3815,
+          "current_status": "ACTIVE",
+          "days_active": 2,
+          "unrealized_pnl": 49
+        }
+      ],
+      "has_notifications": true
+    },
+    "executionTime": 39376,
+    "success": true
+  }
+]

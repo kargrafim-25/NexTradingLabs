@@ -1,0 +1,249 @@
+[
+  {
+    "timestamp": "2025-09-08T20:58:10.615Z",
+    "userId": "46304040",
+    "timeframe": "15M",
+    "subscriptionTier": "pro",
+    "request": {
+      "symbol": "XAUUSD",
+      "timeframe": "15M",
+      "userTier": "pro"
+    },
+    "response": {
+      "action": "BUY",
+      "entry": 3636.36,
+      "stop_loss": 3610,
+      "take_profit": 3675.9,
+      "confidence": 75,
+      "take_profits": [
+        {
+          "level": 1,
+          "price": 3675.9,
+          "risk_reward_ratio": 1.5
+        },
+        {
+          "level": 2,
+          "price": 3689.08,
+          "risk_reward_ratio": 2
+        },
+        {
+          "level": 3,
+          "price": 3715.44,
+          "risk_reward_ratio": 3
+        }
+      ],
+      "ai_analysis": {
+        "brief": "Bullish intraday continuation setup on the 15M: price is trading at ~3,636.36 with strong breakout momentum after recent record highs, so the plan is to BUY on continuation with a tight stop below the 15M structure at 3,610.00. ([investing.com](https://www.investing.com/currencies/xau-usd), [reuters.com](https://www.reuters.com/world/india/gold-hovers-near-record-high-us-rate-cut-prospects-2025-09-08/?utm_source=openai))",
+        "detailed": "On the 15M timeframe price has pushed to fresh intraday highs and is riding upward momentum, supported by bullish moving-average structure and a positive MACD reading; RSI is neutral-to-leaning-bullish, not yet signaling a severe exhaustion. Bollinger Bands show volatility expansion consistent with a breakout (price trading toward/above the upper band) and volume/momentum readings on recent candles indicate buyers are in control. Key intraday support sits near the 3,575–3,610 zone (stop placed below structural support) while immediate resistance / targets cluster in the 3,676–3,715 area — trade with managed risk. ([tipranks.com](https://www.tipranks.com/commodities/cm%3Axauusd/technical-analysis?utm_source=openai), [investing.com](https://www.investing.com/analysis/gold-forecast-bollinger-band-breakout-and-macd-momentum-point-to-higher-prices-200665790?utm_source=openai))",
+        "market_sentiment": "BULLISH",
+        "trend_direction": "UPWARD",
+        "key_indicators": [
+          "RSI (14) — neutral to slightly bullish (~61 by available scan)",
+          "MACD — positive / bullish histogram (momentum supporting upside)",
+          "Moving Averages — short/medium EMAs above longer-term MAs (bullish structure)",
+          "Bollinger Bands — expansion / price at/above upper band (breakout volatility)",
+          "Volume & momentum — recent expansion on breakout candles (buy-side conviction)"
+        ]
+      },
+      "future_positions": [],
+      "historical_positions": [
+        {
+          "symbol": "XAUUSD",
+          "entry_price": 3450,
+          "current_status": "ACTIVE",
+          "days_active": 2,
+          "unrealized_pnl": 186.36
+        }
+      ],
+      "has_notifications": true
+    },
+    "executionTime": 84842,
+    "success": true
+  },
+  {
+    "timestamp": "2025-09-08T21:06:44.882Z",
+    "userId": "46304040",
+    "timeframe": "5M",
+    "subscriptionTier": "pro",
+    "request": {
+      "symbol": "XAUUSD",
+      "timeframe": "5M",
+      "userTier": "pro"
+    },
+    "response": {
+      "action": "BUY",
+      "entry": 3635,
+      "stop_loss": 3615,
+      "take_profit": 3665,
+      "confidence": 78,
+      "take_profits": [
+        {
+          "level": 1,
+          "price": 3665,
+          "risk_reward_ratio": 1.5
+        },
+        {
+          "level": 2,
+          "price": 3675,
+          "risk_reward_ratio": 2
+        },
+        {
+          "level": 3,
+          "price": 3695,
+          "risk_reward_ratio": 3
+        }
+      ],
+      "ai_analysis": {
+        "brief": "5-minute context shows bullish short-term momentum around 3635 with recent breakout attempts and supportive short EMAs; intraday indicators remain constructive while volatility and volume point to continuation on pullbacks. ([webull.com](https://www.webull.com/quote/fx-xauusd), [mql5.com](https://www.mql5.com/en/quotes/metals/xauusd), [tipranks.com](https://www.tipranks.com/currencies/cm%3Axauusd/technical-analysis?utm_source=openai), [wickwatcher.com](https://wickwatcher.com/stock-analysis/technical-analysis/xauusd-technical-analysis/?utm_source=openai), [fixiomarkets.com](https://fixiomarkets.com/en/prex-blogs/xau-usd-technical-analysis-1h-gold-price/detail?utm_source=openai))",
+        "detailed": "Price is trading near 3635 on the 5-minute chart with short EMAs (20/50) aligned bullishly and the recent intraday structure showing higher lows, favouring a long bias; RSI sits in a moderate-to-strong zone (not extreme) while MACD shows bullish momentum, indicating room for continuation on confirmed support holds. Bollinger Bands are widening after a short squeeze which supports momentum continuation, and volume spiked on recent advances then cooled on pullbacks — a typical refresh before another leg higher. Primary risk is a fast intraday reversal into the nearest support area (~3610–3618); place stop under that band and target measured moves at R:R 1.5/2.0/3.0 as specified. ([webull.com](https://www.webull.com/quote/fx-xauusd), [mql5.com](https://www.mql5.com/en/quotes/metals/xauusd), [tipranks.com](https://www.tipranks.com/currencies/cm%3Axauusd/technical-analysis?utm_source=openai), [wickwatcher.com](https://wickwatcher.com/stock-analysis/technical-analysis/xauusd-technical-analysis/?utm_source=openai), [fixiomarkets.com](https://fixiomarkets.com/en/prex-blogs/xau-usd-technical-analysis-1h-gold-price/detail?utm_source=openai))",
+        "market_sentiment": "BULLISH",
+        "trend_direction": "UPWARD",
+        "key_indicators": [
+          "RSI (14)",
+          "MACD (12,26)",
+          "EMA 20/50",
+          "Bollinger Bands",
+          "Volume"
+        ]
+      },
+      "future_positions": [],
+      "historical_positions": [
+        {
+          "symbol": "XAUUSD",
+          "entry_price": 3586.3591,
+          "current_status": "ACTIVE",
+          "days_active": 2,
+          "unrealized_pnl": 48.64
+        }
+      ],
+      "has_notifications": true
+    },
+    "executionTime": 63715,
+    "success": true
+  },
+  {
+    "timestamp": "2025-09-08T21:10:38.376Z",
+    "userId": "46304040",
+    "timeframe": "5M",
+    "subscriptionTier": "pro",
+    "request": {
+      "symbol": "XAUUSD",
+      "timeframe": "5M",
+      "userTier": "pro"
+    },
+    "response": {
+      "action": "BUY",
+      "entry": 3635.91,
+      "stop_loss": 3610.91,
+      "take_profit": 3673.41,
+      "confidence": 78,
+      "take_profits": [
+        {
+          "level": 1,
+          "price": 3673.41,
+          "risk_reward_ratio": 1.5
+        },
+        {
+          "level": 2,
+          "price": 3685.91,
+          "risk_reward_ratio": 2
+        },
+        {
+          "level": 3,
+          "price": 3710.91,
+          "risk_reward_ratio": 3
+        }
+      ],
+      "ai_analysis": {
+        "brief": "Short-term bias is bullish on the 5-minute chart: price is trading above short-term moving averages with positive momentum and expanding volatility bands, suggesting push higher continuation. ([investing.com](https://www.investing.com/currencies/xau-usd), [tipranks.com](https://www.tipranks.com/commodities/cm%3Axauusd/technical-analysis?utm_source=openai))",
+        "detailed": "Price is making higher intraday highs and is trading above the 20/50 EMAs on the 5-minute timeframe, indicating an upward short-term trend. RSI is in the mid-60s showing bullish momentum without being overbought while MACD histogram is positive, supporting further upside; Bollinger Bands have widened which aligns with increased volatility and directional expansion. Immediate support sits near 3610-3620 (recent consolidation low) and immediate resistance is the intraday high around 3646 with upside targets at the calculated take-profit levels. ([tipranks.com](https://www.tipranks.com/commodities/cm%3Axauusd/technical-analysis?utm_source=openai), [investing.com](https://www.investing.com/currencies/xau-usd), [falcontrading.app](https://falcontrading.app/signals/XAUUSD-RSI?utm_source=openai), [thetimes.co.uk](https://www.thetimes.co.uk/article/gold-price-new-high-record-3600-dollars-vkktb07fr?utm_source=openai))",
+        "market_sentiment": "BULLISH",
+        "trend_direction": "UPWARD",
+        "key_indicators": [
+          "RSI (14)",
+          "MACD (12,26,9)",
+          "EMA 20/50/200",
+          "Bollinger Bands (20,2)",
+          "Volume (intraday)",
+          "ATR"
+        ]
+      },
+      "future_positions": [],
+      "historical_positions": [
+        {
+          "symbol": "XAUUSD",
+          "entry_price": 3580,
+          "current_status": "ACTIVE",
+          "days_active": 2,
+          "unrealized_pnl": 55.91
+        }
+      ],
+      "has_notifications": true
+    },
+    "executionTime": 62110,
+    "success": true
+  },
+  {
+    "timestamp": "2025-09-08T21:20:37.493Z",
+    "userId": "46304040",
+    "timeframe": "5M",
+    "subscriptionTier": "pro",
+    "request": {
+      "symbol": "XAUUSD",
+      "timeframe": "5M",
+      "userTier": "pro"
+    },
+    "response": {
+      "action": "BUY",
+      "entry": 3586.75,
+      "stop_loss": 3556.75,
+      "take_profit": 3631.75,
+      "confidence": 78,
+      "take_profits": [
+        {
+          "level": 1,
+          "price": 3631.75,
+          "risk_reward_ratio": 1.5
+        },
+        {
+          "level": 2,
+          "price": 3646.75,
+          "risk_reward_ratio": 2
+        },
+        {
+          "level": 3,
+          "price": 3676.75,
+          "risk_reward_ratio": 3
+        }
+      ],
+      "ai_analysis": {
+        "brief": "Short-term 5M structure favors a long bias as price trades near session highs with bullish momentum and rising volume on the latest candles, aligned with a positive intraday moving average slope and expanding Bollinger Bands indicating continuation potential. ([advfn.com](https://www.advfn.com/stock-market/PM/XAUUSD/stock-price?utm_source=openai))",
+        "detailed": "Price is currently trading around 3586.75 on the 5-minute chart and has formed higher highs and higher lows over the last several pullbacks, with the 20-EMA above the 50-EMA signaling short-term bullish alignment. RSI on 5M sits in bullish territory but not yet overbought, MACD histogram is positive and widening which supports continuation higher, and Bollinger Bands are expanding after a squeeze indicating increased volatility. Key horizontal support sits near 3556.75 (recent intraday swing low) with immediate resistance clustered between 3630-3650; a buy above current price with a tight stop below 3556.75 targets the indicated R:R levels. ([advfn.com](https://www.advfn.com/stock-market/PM/XAUUSD/stock-price?utm_source=openai), [ft.com](https://www.ft.com/content/05c798a8-6178-4c14-b155-d977ad4b69e9?utm_source=openai))",
+        "market_sentiment": "BULLISH",
+        "trend_direction": "UPWARD",
+        "key_indicators": [
+          "RSI (5M)",
+          "MACD (5M)",
+          "EMA 20",
+          "EMA 50",
+          "Bollinger Bands",
+          "Volume Profile",
+          "Horizontal Support/Resistance"
+        ]
+      },
+      "future_positions": [],
+      "historical_positions": [
+        {
+          "symbol": "XAUUSD",
+          "entry_price": 3536.75,
+          "current_status": "ACTIVE",
+          "days_active": 2,
+          "unrealized_pnl": 50
+        }
+      ],
+      "has_notifications": true
+    },
+    "executionTime": 64045,
+    "success": true
+  }
+]

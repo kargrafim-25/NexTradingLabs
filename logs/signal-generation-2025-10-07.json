@@ -1,0 +1,126 @@
+[
+  {
+    "timestamp": "2025-10-07T21:53:25.653Z",
+    "userId": "7a95babd-4f7d-4e87-b8c2-4a5adbb674a2",
+    "timeframe": "5M",
+    "subscriptionTier": "pro_trader",
+    "request": {
+      "symbol": "XAUUSD",
+      "timeframe": "5M",
+      "userTier": "pro_trader"
+    },
+    "response": {
+      "action": "BUY",
+      "entry": 3964,
+      "stop_loss": 3934,
+      "take_profit": 4009,
+      "confidence": 78,
+      "take_profits": [
+        {
+          "level": 1,
+          "price": 4009,
+          "risk_reward_ratio": 1.5
+        },
+        {
+          "level": 2,
+          "price": 4024,
+          "risk_reward_ratio": 2
+        },
+        {
+          "level": 3,
+          "price": 4054,
+          "risk_reward_ratio": 3
+        }
+      ],
+      "ai_analysis": {
+        "brief": "Short-term 5 minute bias is bullish as price trades above short and medium moving averages after a strong multi-session advance and a shallow pullback to support near 3955-3935. Momentum indicators favor continuation while volatility is elevated. Use a tight stop under the 5M swing low and scale targets toward recent and psychological resistance around 4,000 and above.",
+        "detailed": "Price on the 5 minute chart is in an upward structure with higher highs and higher lows and currently sits above the EMA short and mid bands confirming short-term trend. RSI is in neutral-to-bullish territory and MACD histogram is positive, indicating momentum supporting further upside rather than exhaustion. Bollinger Bands are widening and recent green candles printed on above-average volume, supporting a buy bias while keeping a stop below the recent 5 minute swing low to limit volatility risk.",
+        "market_sentiment": "BULLISH",
+        "trend_direction": "UPWARD",
+        "key_indicators": [
+          "RSI 5M",
+          "MACD 5M",
+          "EMA20 EMA50 5M",
+          "Bollinger Bands 20 2 5M",
+          "Volume 5M",
+          "Support Resistance levels"
+        ]
+      },
+      "future_positions": [],
+      "historical_positions": [
+        {
+          "symbol": "XAUUSD",
+          "entry_price": 3890,
+          "current_status": "ACTIVE",
+          "days_active": 2,
+          "unrealized_pnl": 74
+        }
+      ],
+      "has_notifications": true
+    },
+    "executionTime": 44009,
+    "success": true
+  },
+  {
+    "timestamp": "2025-10-07T22:05:20.941Z",
+    "userId": "7131ae29-7fd6-4288-8342-0945d5444dfc",
+    "timeframe": "15M",
+    "subscriptionTier": "admin",
+    "request": {
+      "symbol": "XAUUSD",
+      "timeframe": "15M",
+      "userTier": "admin"
+    },
+    "response": {
+      "action": "BUY",
+      "entry": 3863.53,
+      "stop_loss": 3825,
+      "take_profit": 3921.33,
+      "confidence": 78,
+      "take_profits": [
+        {
+          "level": 1,
+          "price": 3921.33,
+          "risk_reward_ratio": 1.5
+        },
+        {
+          "level": 2,
+          "price": 3940.59,
+          "risk_reward_ratio": 2
+        },
+        {
+          "level": 3,
+          "price": 3979.12,
+          "risk_reward_ratio": 3
+        }
+      ],
+      "ai_analysis": {
+        "brief": "Short-term 15-minute view favors a buy bias after recent pullback to intraday support near 3825 with momentum attempting to re-accelerate toward recent highs; intraday moving averages are sloping up and volatility bands show room to the upside. ([myfxbook.com](https://www.myfxbook.com/forex-market/currencies/XAUUSD?utm_source=openai))",
+        "detailed": "Price is trading around 3863.53 and has found intraday support in the 3820–3830 zone which aligns with the chosen stop level and a 15-minute structural low, while the short-term EMA ribbon (15/50 on 15m) is converging bullishly indicating upward pressure. RSI on the 15-minute chart is neutral-to-slightly-overbought but not extreme, and MACD histogram shows rising momentum consistent with a resumption of the intraday uptrend. Bollinger Bands are expanding after a squeeze which suggests increased intraday volatility and a probable breakout toward the upside if price holds above 3825; volume on the most recent bullish candles shows above-average participation supporting the long setup. ([tradingview.com](https://www.tradingview.com/chart/XAUUSD/?utm_source=openai))",
+        "market_sentiment": "BULLISH",
+        "trend_direction": "UPWARD",
+        "key_indicators": [
+          "RSI (15m)",
+          "MACD (15m)",
+          "EMA 15/50 (15m)",
+          "Bollinger Bands (20,2)",
+          "Support/Resistance levels",
+          "Volume (15m)"
+        ]
+      },
+      "future_positions": [],
+      "historical_positions": [
+        {
+          "symbol": "XAUUSD",
+          "entry_price": 3790,
+          "current_status": "ACTIVE",
+          "days_active": 2,
+          "unrealized_pnl": 73.53
+        }
+      ],
+      "has_notifications": true
+    },
+    "executionTime": 60086,
+    "success": true
+  }
+]
