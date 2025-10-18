@@ -4,6 +4,18 @@
 
 NTL (Next Trading Labs) is a professional AI-powered trading platform that provides real-time XAUUSD (Gold) trading signals using OpenAI's GPT technology. The platform features a comprehensive subscription system with tiered access levels, credit management, live market analysis, and integrated TradingView charts. It offers both independent authentication and optional Replit integration, with robust security measures including account sharing detection and rate limiting. The project aims to provide a reliable and feature-rich trading assistant experience.
 
+## Recent Changes
+
+**October 18, 2025** - GitHub Import Setup for Replit Environment
+- Renamed `Client/` directory to `client/` (lowercase) to match application expectations
+- Created missing `client/src/services/deviceFingerprint.ts` service for device tracking functionality
+- Updated Vite configuration with HMR settings for Replit proxy support (clientPort: 443, strictPort: false)
+- Configured environment variables: DATABASE_URL, SESSION_SECRET, OPENAI_API_KEY, BREVO_API_KEY, ADMIN_EMAIL, ADMIN_PASSWORD
+- Installed all npm dependencies and pushed database schema using Drizzle
+- Configured development workflow running on port 5000 with Vite dev server
+- Configured deployment as VM type with build and start scripts
+- Application successfully running and verified with screenshot
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.

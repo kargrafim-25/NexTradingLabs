@@ -37,3 +37,8 @@ exposeLocalhost = true
 [[ports]]
 localPort = 38085
 externalPort = 3000
+
+[deployment]
+deploymentTarget = "vm"
+run = ["npm", "start"]
+build = ["npm", "run", "build"]
