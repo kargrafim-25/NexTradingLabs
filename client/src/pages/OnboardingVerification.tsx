@@ -8,6 +8,7 @@ export default function OnboardingVerification() {
   const [, setLocation] = useLocation();
   const queryClient = useQueryClient();
   const [userEmail, setUserEmail] = useState("");
+  const [selectedPlan, setSelectedPlan] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,6 +21,7 @@ export default function OnboardingVerification() {
         if (response.ok) {
           const data = await response.json();
           setUserEmail(data.email);
+          setSelectedPlan(data.selectedPlan || "");
         } else {
           setLocation('/signup');
         }
@@ -40,7 +42,13 @@ export default function OnboardingVerification() {
     
     // Give a moment for the router to update
     setTimeout(() => {
-      setLocation('/');
+      // If user selected a paid plan, redirect to upgrade/payment page
+      if (selectedPlan === 'starter_trader' || selectedPlan === 'pro_trader') {
+        setLocation('/upgrade');
+      } else {
+        // Free plan users go to dashboard
+        setLocation('/');
+      }
     }, 500);
   };
 
