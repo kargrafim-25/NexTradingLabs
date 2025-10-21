@@ -9,6 +9,8 @@ import { initializeSampleNews } from "./services/newsService";
 import { startSignalLifecycleService } from "./signalLifecycle";
 import { authService } from "./services/authService";
 import { subscriptionChecker } from "./services/subscriptionChecker";
+import { pool } from "./db";  // ← ADD THIS LINE
+
 
 const app = express();
 
@@ -50,7 +52,7 @@ if (process.env.DATABASE_URL && process.env.NODE_ENV === 'production') {
   // Use PostgreSQL session store for production
   const pgStore = connectPg(session);
   const sessionStore = new pgStore({
-    conString: process.env.DATABASE_URL,
+    pool: pool,
     createTableIfMissing: true,
     ttl: sessionTtl,
     tableName: "sessions",
