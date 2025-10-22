@@ -807,7 +807,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Independent logout endpoint
-  app.post('/api/auth/logout-independent', (req, res) => {
+  app.post('/api/logout', (req, res) => {
     req.session.destroy((err) => {
       if (err) {
         console.error('Logout error:', err);
