@@ -115,6 +115,7 @@ export default function Landing() {
                 variant="outline"
                 className="text-lg px-8 py-4 border-primary/20 hover:bg-primary/10"
                 data-testid="button-learn-more"
+                onClick={() => setLocation('/about')}
               >
                 Learn More
               </Button>
