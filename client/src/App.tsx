@@ -8,6 +8,7 @@ import NotFound from "@/pages/not-found";
 import Landing from "@/pages/Landing";
 import Dashboard from "@/pages/Dashboard";
 import AdminLogs from "@/pages/AdminLogs";
+import About from "@/pages/About";
 import AdminDashboard from "@/pages/AdminDashboard";
 import Settings from "@/pages/Settings";
 import Login from "@/pages/Login";
@@ -42,6 +43,7 @@ function Router() {
     return (
       <Switch>
         <Route path="/" component={Landing} />
+        <Route path="/about" component={About} /> 
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/forgot-password" component={ForgotPassword} />
