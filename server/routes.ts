@@ -806,6 +806,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Logout endpoint - GET for browser navigation
+  app.get('/api/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error('Logout error:', err);
+    }
+    res.redirect('/');
+   });
+  });
+  
   // Independent logout endpoint
   app.post('/api/logout', (req, res) => {
     req.session.destroy((err) => {
