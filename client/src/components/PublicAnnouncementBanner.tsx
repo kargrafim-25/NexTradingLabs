@@ -8,7 +8,7 @@ export function PublicAnnouncementBanner() {
         <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
           <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-primary animate-pulse" />
           <h3 className="font-bold text-base md:text-lg bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Coming Soon in 2025
+            Coming Soon in 2026
           </h3>
           <Sparkles className="w-5 h-5 md:w-6 md:h-6 text-primary animate-pulse" />
         </div>
