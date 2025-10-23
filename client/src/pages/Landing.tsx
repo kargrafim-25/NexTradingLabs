@@ -56,7 +56,8 @@ export default function Landing() {
                 className="w-10 h-10 object-contain rounded-lg"
                 data-testid="img-logo"
               />
-              <div>
+              {/* Hide text on mobile, show on md and up */}
+              <div className="hidden md:block">
                 <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   Next Trading Labs
                 </h1>
@@ -64,18 +65,20 @@ export default function Landing() {
               </div>
             </div>
             
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 md:gap-3">
               <Button 
                 onClick={handleLogin}
                 variant="outline"
-                className="font-semibold hover:bg-primary/10 hover:scale-105 transition-all duration-300"
+                size="sm"
+                className="font-semibold hover:bg-primary/10 hover:scale-105 transition-all duration-300 md:size-default"
                 data-testid="button-login"
               >
                 Login
               </Button>
               <Button 
                 onClick={handleGetStarted}
-                className="gradient-primary text-white font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+                size="sm"
+                className="gradient-primary text-white font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 md:size-default"
                 data-testid="button-get-started-header"
               >
                 Get Started
@@ -90,13 +93,13 @@ export default function Landing() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <Badge className="mb-4 bg-primary/20 text-primary border-primary/20" data-testid="badge-status">
+            <Badge className="mb-4 bg-primary/20 text-primary border-primary/20 hidden sm:inline-flex" data-testid="badge-status">
               AI-Powered Trading Platform
             </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 pb-2 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight">
-              Professional AI Trading Signals
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 pb-2 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight">
+               Professional AI Trading Signals
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               Get real-time AI-generated trading signals with advanced analysis, 
               risk management, and professional-grade insights powered by cutting-edge technology.
             </p>
