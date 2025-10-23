@@ -19,6 +19,7 @@ import ProfileAvatar from '@/components/ProfileAvatar';
 import { NotificationBadge } from '@/components/NotificationBadge';
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { AnnouncementBanner } from '@/components/AnnouncementBanner';
 
 export default function Dashboard() {
   const { toast } = useToast();
@@ -201,6 +202,7 @@ export default function Dashboard() {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <AnnouncementBanner />
         {/* Top Stats Bar */}
         <StatsCards />
 
