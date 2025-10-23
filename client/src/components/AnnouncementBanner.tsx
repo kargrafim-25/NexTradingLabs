@@ -30,7 +30,7 @@ export function AnnouncementBanner() {
             <Smartphone className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
             <div>
               <p className="font-medium text-foreground">Mobile App</p>
-              <p>iOS & Android apps launching Q1 2025</p>
+              <p>iOS & Android apps launching Q1 2026</p>
             </div>
           </div>
           
