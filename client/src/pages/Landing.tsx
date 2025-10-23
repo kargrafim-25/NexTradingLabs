@@ -7,6 +7,7 @@ import ChatbotTrigger from '@/components/ChatbotTrigger';
 import Footer from '@/components/Footer';
 import { useState } from 'react';
 import { useLocation } from "wouter";
+import { PublicAnnouncementBanner } from '@/components/PublicAnnouncementBanner';
 
 export default function Landing() {
   const [, setLocation] = useLocation();
@@ -134,6 +135,13 @@ export default function Landing() {
               </Button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Coming Soon Announcement Banner */}
+      <section className="py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <PublicAnnouncementBanner />
         </div>
       </section>
 
