@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { useAuth } from "@/hooks/useAuth";
 import { TrendingUp, Clock, Target, ShieldCheck } from "lucide-react";
 import { TradingSignal } from "@/types/trading";
+import { ComingSoonBadge } from '@/components/ComingSoonBadge';
 
 export default function LatestSignal() {
   const { user } = useAuth();
@@ -175,6 +176,22 @@ export default function LatestSignal() {
             </p>
           </div>
         )}
+        
+        <div className="border-t pt-4 mt-4 bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-lg p-3 border border-purple-500/20">
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-2">
+              <MessageSquare className="w-4 h-4 text-purple-500" />
+              <span className="text-sm font-medium text-foreground">AI Analysis Chat</span>
+            </div>
+            <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs">
+              <Sparkles className="w-3 h-3 mr-1" />
+              Coming Soon
+            </Badge>
+          </div>
+          <p className="text-xs text-muted-foreground">
+            Soon: Ask AI questions about this signal's analysis and get instant explanations
+          </p>
+        </div>
 
         {/* Status Badge */}
         <div className="flex items-center justify-between">
