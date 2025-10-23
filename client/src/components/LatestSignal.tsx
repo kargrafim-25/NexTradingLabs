@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useAuth } from "@/hooks/useAuth";
-import { TrendingUp, Clock, Target, ShieldCheck } from "lucide-react";
+import { TrendingUp, Clock, Target, ShieldCheck, MessageSquare } from "lucide-react";
 import { TradingSignal } from "@/types/trading";
 import { ComingSoonBadge } from '@/components/ComingSoonBadge';
 
@@ -177,9 +177,12 @@ export default function LatestSignal() {
           </div>
         )}
         
-        <div className="border-t pt-4 mt-4">
+        <div className="border-t pt-4 mt-4 bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-lg p-3 border border-purple-500/20">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-medium text-muted-foreground">AI Analysis Chat</span>
+            <div className="flex items-center gap-2">
+              <MessageSquare className="w-4 h-4 text-purple-500" />
+              <span className="text-sm font-medium text-foreground">AI Analysis Chat</span>
+            </div>
             <ComingSoonBadge variant="colorful" />
           </div>
           <p className="text-xs text-muted-foreground">
