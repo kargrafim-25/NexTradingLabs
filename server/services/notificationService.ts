@@ -1,5 +1,21 @@
 import { storage } from '../storage';
 import { differenceInHours, differenceInDays, isToday, startOfMonth, endOfMonth, addMonths, differenceInCalendarDays } from 'date-fns';
+import { TransactionalEmailsApi, TransactionalEmailsApiApiKeys } from '@getbrevo/brevo';
+
+// Initialize Brevo Email API
+let emailApi: TransactionalEmailsApi | null = null;
+
+try {
+  if (process.env.BREVO_API_KEY) {
+    emailApi = new TransactionalEmailsApi();
+    emailApi.setApiKey(TransactionalEmailsApiApiKeys.apiKey, process.env.BREVO_API_KEY);
+    console.log('[EMAIL] Brevo email API initialized successfully');
+  } else {
+    console.warn('[EMAIL] BREVO_API_KEY not found - email services will be limited');
+  }
+} catch (error) {
+  console.error('[EMAIL] Failed to initialize Brevo email API:', error);
+}
 
 export class NotificationService {
   
@@ -168,6 +184,41 @@ export class NotificationService {
       discountCode: user?.pendingDiscountCode || undefined,
       discountPercentage: monthlyData.discountPercentage
     };
+  }
+
+  /**
+   * Send a general email (for contact form, notifications, etc.)
+   */
+  async sendEmail(
+    to: string,
+    subject: string,
+    htmlContent: string,
+    textContent?: string
+  ): Promise<boolean> {
+    if (!emailApi) {
+      console.error('[EMAIL] Email API not available - BREVO_API_KEY not configured');
+      return false;
+    }
+
+    try {
+      const emailData = {
+        to: [{ email: to }],
+        subject,
+        htmlContent,
+        textContent: textContent || htmlContent.replace(/<[^>]*>/g, ''), // Strip HTML for text version
+        sender: {
+          email: 'support@nextradinglabs.com',
+          name: 'Next Trading Labs'
+        }
+      };
+
+      await emailApi.sendTransacEmail(emailData);
+      console.log(`[EMAIL] Successfully sent to ${to} - ${subject}`);
+      return true;
+    } catch (error) {
+      console.error('[EMAIL] Failed to send email:', error);
+      return false;
+    }
   }
 }
 
