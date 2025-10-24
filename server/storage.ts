@@ -883,12 +883,29 @@ export class DatabaseStorage implements IStorage {
   }
 
   async updatePaymentRequestNotes(requestId: string, notes: string): Promise<any> {
-    const [updatedRequest] = await db
+    const updatedRequest = await db
       .update(paymentRequests)
       .set({ notes })
       .where(eq(paymentRequests.id, requestId))
       .returning();
-    return updatedRequest;
+
+    return updatedRequest[0];
+  }
+
+  // Delete user and all related data
+  async deleteUser(userId: string): Promise<void> {
+    try {
+      // Delete all user-related data to avoid constraint issues
+      await db.delete(tradingSignals).where(eq(tradingSignals.userId, userId));
+      await db.delete(paymentRequests).where(eq(paymentRequests.userId, userId));
+      await db.delete(userSessions).where(eq(userSessions.userId, userId));
+      await db.delete(securityEvents).where(eq(securityEvents.userId, userId));
+      await db.delete(users).where(eq(users.id, userId));
+      console.log(`[STORAGE] User ${userId} deleted from database`);
+    } catch (error) {
+      console.error('Error deleting user:', error);
+      throw error;
+    }
   }
 }
 
