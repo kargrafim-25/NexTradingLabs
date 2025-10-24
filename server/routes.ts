@@ -1858,14 +1858,32 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       // Confirm payment request
       await storage.confirmPaymentRequest(id, adminId);
-      
+
       // Update notes if provided
       if (notes) {
         await storage.updatePaymentRequestNotes(id, notes);
       }
 
       const updatedUser = await storage.getUser(paymentRequest.userId);
-      
+
+      // Send confirmation email to user
+      const planName = paymentRequest.requestedPlan === 'starter_trader' ? 'Starter Trader' : 'Pro Trader';
+      await notificationService.sendEmail(
+        updatedUser.email,
+        'Your Payment Confirmed - Plan Activated ✅',
+        `<p>Hi ${updatedUser.firstName || 'Trader'},</p>
+        <p>Your payment has been <b>confirmed</b> and your plan is now <b>active</b>!</p>
+        <p><b>Details:</b></p>
+        <ul>
+          <li>Plan: ${planName}</li>
+          <li>Period: ${paymentRequest.subscriptionPeriod} month(s)</li>
+          <li>Reference: ${paymentRequest.referenceCode}</li>
+          <li>Amount: $${paymentRequest.amount}</li>
+        </ul>
+        <p>You now have full access to all ${planName} features. Log in and start trading!</p>
+        <p>Thank you for choosing Next Trading Labs!</p>`
+      );
+
       console.log(`[PAYMENT] Admin ${adminUser.email} confirmed payment ${paymentRequest.referenceCode} for user ${paymentRequest.userEmail}`);
 
       res.json({
