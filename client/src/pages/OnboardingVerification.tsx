@@ -38,35 +38,38 @@ export default function OnboardingVerification() {
 
   const handleVerificationComplete = async () => {
     try {
-     // Mark onboarding as complete
-     const completeResponse = await fetch('/api/auth/complete-onboarding', {
-       method: 'POST',
-       credentials: 'include'
-     });
-
-     if (!completeResponse.ok) {
-      console.error('Failed to complete onboarding');
-     }
-
-     // Refresh auth state
-     await queryClient.invalidateQueries({ queryKey: ['/api/auth/user'] });
-    
-     // Force full page redirect after short delay
-     setTimeout(() => {
-      if (selectedPlan === 'starter_trader' || selectedPlan === 'pro_trader') {
-        // Paid plans go to payment page
-        window.location.href = '/upgrade';
+      // Refresh auth state to get updated user with onboardingCompleted = true
+      await queryClient.invalidateQueries({ queryKey: ['/api/auth/user'] });
+      
+      // Wait for auth state to fully refresh
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Fetch fresh user data to get accurate selectedPlan
+      const userResponse = await fetch('/api/auth/user', { 
+        credentials: 'include' 
+      });
+      
+      if (userResponse.ok) {
+        const userData = await userResponse.json();
+        
+        // Redirect based on plan
+        if (userData.selectedPlan === 'starter_trader' || userData.selectedPlan === 'pro_trader') {
+          // Paid plans → WhatsApp payment page
+          window.location.href = '/upgrade';
+        } else {
+          // Free plan → Dashboard
+          window.location.href = '/dashboard';
+        }
       } else {
-        // Free plan goes to dashboard
+        // Fallback if user fetch fails
         window.location.href = '/dashboard';
       }
-    }, 500);
-  } catch (error) {
-    console.error('Error completing verification:', error);
-    // Fallback redirect
-    window.location.href = '/dashboard';
-  }
-};
+    } catch (error) {
+      console.error('Error completing verification:', error);
+      // Fallback redirect
+      window.location.href = '/dashboard';
+    }
+  };
 
   const handleClose = () => {
     setLocation('/signup');
