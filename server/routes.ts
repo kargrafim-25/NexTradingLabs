@@ -1604,6 +1604,30 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Admin: Delete user account and all related data
+  app.delete('/api/admin/users/:userId', isAuthenticated, async (req: any, res) => {
+    try {
+     const adminId = req.user.claims.sub;
+     const adminUser = await storage.getUser(adminId);
+
+     if (!adminUser || adminUser.subscriptionTier !== 'admin') {
+      return res.status(403).json({ message: "Admin access required" });
+     }
+
+     const { userId } = req.params;
+    
+     // Delete user and all related records
+     await storage.deleteUser(userId);
+    
+     console.log(`[ADMIN] User ${userId} deleted by admin ${adminUser.email}`);
+     res.json({ success: true, message: "User deleted successfully" });
+   } catch (error) {
+     console.error("Error deleting user:", error);
+     res.status(500).json({ message: "Failed to delete user" });
+   }
+ });
+
+
   // Contact form submission endpoint
   app.post('/api/v1/contact', async (req, res) => {
     try {
