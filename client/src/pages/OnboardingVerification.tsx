@@ -37,20 +37,36 @@ export default function OnboardingVerification() {
   }, [setLocation]);
 
   const handleVerificationComplete = async () => {
-    // Ensure auth state is refreshed before redirecting
-    await queryClient.invalidateQueries({ queryKey: ['/api/auth/user'] });
+    try {
+     // Mark onboarding as complete
+     const completeResponse = await fetch('/api/auth/complete-onboarding', {
+       method: 'POST',
+       credentials: 'include'
+     });
+
+     if (!completeResponse.ok) {
+      console.error('Failed to complete onboarding');
+     }
+
+     // Refresh auth state
+     await queryClient.invalidateQueries({ queryKey: ['/api/auth/user'] });
     
-    // Give a moment for the router to update
-    setTimeout(() => {
-      // If user selected a paid plan, redirect to upgrade/payment page
+     // Force full page redirect after short delay
+     setTimeout(() => {
       if (selectedPlan === 'starter_trader' || selectedPlan === 'pro_trader') {
-        setLocation('/upgrade');
+        // Paid plans go to payment page
+        window.location.href = '/upgrade';
       } else {
-        // Free plan users go to dashboard
-        setLocation('/');
+        // Free plan goes to dashboard
+        window.location.href = '/dashboard';
       }
     }, 500);
-  };
+  } catch (error) {
+    console.error('Error completing verification:', error);
+    // Fallback redirect
+    window.location.href = '/dashboard';
+  }
+};
 
   const handleClose = () => {
     setLocation('/signup');
