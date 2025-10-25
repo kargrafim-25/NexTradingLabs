@@ -497,6 +497,37 @@ export default function AdminDashboard() {
                             >
                               {u.isActive ? 'Disable' : 'Activate'}
                             </Button>
+
+                            <Button
+                              size="sm"
+                              variant="destructive"
+                              className="text-xs"
+                              onClick={() => {
+                                if (window.confirm(`Delete user ${u.email}? This cannot be undone.`)) {
+                                 fetch(`/api/admin/users/${u.id}`, {
+                                   method: 'DELETE',
+                                   credentials: 'include'
+                                 })
+                                 .then(res => res.json())
+                                 .then(data => {
+                                   if (data.success) {
+                                    toast({
+                                     title: 'User Deleted',
+                                     description: 'User has been permanently deleted'
+                                    });
+                                    queryClient.invalidateQueries({ queryKey: ['admin', 'users'] });
+                                   }
+                                  })
+                                  .catch(err => toast({
+                                   title: 'Error',
+                                   description: err.message,
+                                   variant: 'destructive'
+                                  }));
+                                 }
+                               }}
+                             >
+                              Delete
+                             </Button>
                           </div>
                         </TableCell>
                       </TableRow>
