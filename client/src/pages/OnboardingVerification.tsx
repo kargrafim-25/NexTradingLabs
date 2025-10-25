@@ -36,40 +36,39 @@ export default function OnboardingVerification() {
     fetchUserData();
   }, [setLocation]);
 
-  const handleVerificationComplete = async () => {
-    try {
-      // Refresh auth state to get updated user with onboardingCompleted = true
-      await queryClient.invalidateQueries({ queryKey: ['/api/auth/user'] });
+const handleVerificationComplete = async () => {
+  try {
+    await queryClient.invalidateQueries({ queryKey: ['/api/auth/user'] });
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    const userResponse = await fetch('/api/auth/user', { credentials: 'include' });
+    
+    if (userResponse.ok) {
+      const userData = await userResponse.json();
+      console.log('[ONBOARDING] User after verification:', userData);
       
-      // Wait for auth state to fully refresh
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Fetch fresh user data to get accurate selectedPlan
-      const userResponse = await fetch('/api/auth/user', { 
-        credentials: 'include' 
-      });
-      
-      if (userResponse.ok) {
-        const userData = await userResponse.json();
-        
-        // Redirect based on plan
-        if (userData.selectedPlan === 'starter_trader' || userData.selectedPlan === 'pro_trader') {
-          // Paid plans → WhatsApp payment page
-          window.location.href = '/upgrade';
-        } else {
-          // Free plan → Dashboard
-          window.location.href = '/dashboard';
-        }
-      } else {
-        // Fallback if user fetch fails
-        window.location.href = '/dashboard';
+      // Check if onboarding is actually complete
+      if (!userData.onboardingCompleted) {
+        console.warn('[ONBOARDING] Onboarding not complete yet');
+        window.location.href = '/onboarding/questions';
+        return;
       }
-    } catch (error) {
-      console.error('Error completing verification:', error);
-      // Fallback redirect
-      window.location.href = '/dashboard';
+      
+      // Redirect based on plan
+      if (userData.selectedPlan === 'starter_trader' || userData.selectedPlan === 'pro_trader') {
+        window.location.href = '/upgrade';
+      } else {
+        window.location.href = '/';
+      }
+    } else {
+      console.error('[ONBOARDING] Failed to fetch user:', userResponse.status);
+      window.location.href = '/';
     }
-  };
+  } catch (error) {
+    console.error('[ONBOARDING] Error:', error);
+    window.location.href = '/';
+  }
+};
 
   const handleClose = () => {
     setLocation('/signup');
